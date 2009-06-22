@@ -1,0 +1,12 @@
+%li
+  %img{:src => twit.avatar_url}
+  %a{ :href => "http://twitter.com/#{twit.username}"}= twit.username
+  %p= twit.text
+  %span.date= twit.twit_created_at
+  .rating
+    Rating
+    %span.rating= twit.rating || 0 
+    out of 
+    %span.votes= twit.votes || 0 
+    votes
+
