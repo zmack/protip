@@ -1,0 +1,17 @@
+!!!
+%head
+  %title== Protipse ! #{@title}
+  = stylesheet_link_tag "reset", "style"
+  - yield :head
+%body
+  %h1 Protipse !
+  %ul#menu
+    %li Wtf
+    %li Wtf
+    %li Wtf
+    %li Wtf
+  #content
+    - yield :layout
+
+  = javascript_include_tag "jquery"
+  - yield :js
