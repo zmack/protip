@@ -1,6 +1,12 @@
 #!/usr/bin/env ruby
 require File.dirname(__FILE__) + '/../config/boot'
 require File.dirname(__FILE__) + '/../config/environment'
+require 'open-uri'
 
-
-puts Twit.all
+last_twit = Twit.first(:order => "twitid desc")
+url = "http://search.twitter.com/search.json?q=protip:&rpp=100&since_id=#{last_twit.twitid}"
+puts "getting --[ #{url} ]"
+open(url) do |f|
+  twits = Twit.create_from_string(f.read)
+  puts "--[ #{twits.length} twits added ]"
+end
