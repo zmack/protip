@@ -1,4 +1,45 @@
 body {
-  background-color: #FFF;
-  color: #FF0;
+  background-color: #C1B;
+  color: #0F0;
   font-family: Helvetica; }
+
+a {
+  color: #cc2;
+  text-decoration: none; }
+
+h1 {
+  position: absolute;
+  top: .2em;
+  left: .2em;
+  font-size: 3em; }
+
+#menu {
+  width: 100%;
+  background-color: magenta;
+  border-bottom: .3em solid aqua;
+  text-align: center; }
+  #menu li {
+    line-height: 4em;
+    list-style: none;
+    display: inline;
+    vertical-align: baseline; }
+
+a:hover {
+  color: #ccc; }
+
+ul.twits {
+  width: 800px;
+  margin: 0 auto; }
+  ul.twits li {
+    margin: 1em 0; }
+    ul.twits li a {
+      margin-right: .5em; }
+    ul.twits li img {
+      border: 1px solid pink;
+      margin: .2em; }
+    ul.twits li img, ul.twits li a, ul.twits li p {
+      float: left; }
+    ul.twits li span, ul.twits li .actions {
+      clear: both; }
+      ul.twits li span a,       ul.twits li .actions a {
+        float: none; }

@@ -9,4 +9,7 @@
     out of 
     %span.votes= twit.votes || 0 
     votes
-
+  .actions
+    %a{ :href => voteup_twit_url(twit), :class => "vote_up" } Vote up
+    %a{ :href => votedown_twit_url(twit), :class => "vote_down" } Vote down
+    %a{ :href => twit_url(twit), :class => "link" } Link
