@@ -19,10 +19,9 @@ h1
   border-bottom: .3em solid aqua
   text-align: center
   li
-    line-height: 4em
-    list-style: none
     display: inline
-    vertical-align: baseline
+    list-style: none
+    line-height: 4em
 
 a:hover
   color: #ccc
@@ -35,20 +34,25 @@ a:hover
     li:hover
       background-color: #71c
     li
-      margin: 1em 0
       position: relative
+      min-height: 50px
+      margin: 1em 0
+      padding: .8em
+      background-color: #a1c
+
       -moz-border-radius: .8em
       -webkit-border-radius: .8em
-      background-color: #a1c
-      padding: .8em
       a
-        margin-right: .5em
+        margin-right: .15em
       img
-        border: 1px solid pink
         position: absolute
-      p
-      p, .meta, .actions
+        border: 1px solid pink
+      p, div.rating, .actions
         margin-left: 55px
+      p
+        color: #3FA
+      span.date
+        color: #AAA
 #footer
   clear: both
   text-align: center

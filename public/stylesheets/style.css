@@ -19,10 +19,9 @@ h1 {
   border-bottom: .3em solid aqua;
   text-align: center; }
   #menu li {
-    line-height: 4em;
-    list-style: none;
     display: inline;
-    vertical-align: baseline; }
+    list-style: none;
+    line-height: 4em; }
 
 a:hover {
   color: #ccc; }
@@ -35,19 +34,24 @@ a:hover {
     #content ul.twits li:hover {
       background-color: #71c; }
     #content ul.twits li {
-      margin: 1em 0;
       position: relative;
-      -moz-border-radius: .8em;
-      -webkit-border-radius: .8em;
+      min-height: 50px;
+      margin: 1em 0;
+      padding: .8em;
       background-color: #a1c;
-      padding: .8em; }
+      -moz-border-radius: .8em;
+      -webkit-border-radius: .8em; }
       #content ul.twits li a {
-        margin-right: .5em; }
+        margin-right: .15em; }
       #content ul.twits li img {
-        border: 1px solid pink;
-        position: absolute; }
-      #content ul.twits li p, #content ul.twits li .meta, #content ul.twits li .actions {
+        position: absolute;
+        border: 1px solid pink; }
+      #content ul.twits li p, #content ul.twits li div.rating, #content ul.twits li .actions {
         margin-left: 55px; }
+      #content ul.twits li p {
+        color: #3FA; }
+      #content ul.twits li span.date {
+        color: #AAA; }
 
 #footer {
   clear: both;
