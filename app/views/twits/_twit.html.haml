@@ -1,14 +1,16 @@
 %li
-  %img{:src => twit.avatar_url}
-  %a{ :href => "http://twitter.com/#{twit.username}"}= twit.username
-  %p= twit.text
-  %span.date= twit.twit_created_at
-  .rating
-    Rating
-    %span.rating= twit.rating || 0 
-    out of 
-    %span.votes= twit.votes || 0 
-    votes
+  %img{:src => twit.avatar_url, :height => 48, :width => 48}
+  %p
+    %a{ :href => "http://twitter.com/#{twit.username}"}= twit.username
+    = twit.text
+  .meta
+    %span.date= twit.twit_created_at
+    .rating
+      Rating
+      %span.rating= twit.rating || 0 
+      out of 
+      %span.votes= twit.votes || 0 
+      votes
   .actions
     %a{ :href => voteup_twit_url(twit), :class => "vote_up" } Vote up
     %a{ :href => votedown_twit_url(twit), :class => "vote_down" } Vote down

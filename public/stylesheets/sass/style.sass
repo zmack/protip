@@ -1,4 +1,4 @@
-body
+html, body
   background-color: #C1B
   color: #0F0
   font-family: Helvetica
@@ -27,19 +27,27 @@ h1
 a:hover
   color: #ccc
 
-ul.twits
-  width: 800px
-  margin: 0 auto
-  li
-    margin: 1em 0
-    a
-      margin-right: .5em
-    img
-      border: 1px solid pink
-      margin: .2em
-    img, a, p
-      float: left
-    span, .actions
-      clear: both
+#content
+  padding-bottom: 1em
+  ul.twits
+    width: 800px
+    margin: 0 auto
+    li:hover
+      background-color: #71c
+    li
+      margin: 1em 0
+      position: relative
+      -moz-border-radius: .8em
+      background-color: #a1c
+      padding: .8em
       a
-        float: none
+        margin-right: .5em
+      img
+        border: 1px solid pink
+        position: absolute
+      p
+      p, .meta, .actions
+        margin-left: 55px
+#footer
+  clear: both
+  text-align: center
