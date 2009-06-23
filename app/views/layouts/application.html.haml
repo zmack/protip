@@ -3,6 +3,10 @@
   %title== Protipse ! #{@title}
   = stylesheet_link_tag "reset", "style"
   = yield :head
+  %meta{ :name => "viewport", :content => "width=480" }
+  %link{ :media => "only screen and (max-device-width: 480px)", :href => "stylesheets/iphone.css", :type => "text/css", :rel => "stylesheet" }
+
+
 %body
   %h1
     %a{ :href => '/' }Protipse !

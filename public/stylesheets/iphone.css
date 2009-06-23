@@ -1,0 +1,7 @@
+#content {
+  padding-bottom: 1em; }
+  #content ul.twits {
+    width: 400px; }
+    #content ul.twits li {
+      font-size: 1.3em;
+      -webkit-text-size-adjust: none; }
