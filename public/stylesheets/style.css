@@ -38,6 +38,7 @@ a:hover {
       margin: 1em 0;
       position: relative;
       -moz-border-radius: .8em;
+      -webkit-border-radius: .8em;
       background-color: #a1c;
       padding: .8em; }
       #content ul.twits li a {
