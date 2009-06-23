@@ -1,4 +1,13 @@
 #!/usr/bin/env ruby
+
+ENV['RAILS_ENV'] = case ARGV.first
+  when "p": "production"
+  when "d": "development"
+  when "t": "test"
+  else
+    ARGV.first || ENV['RAILS_ENV'] || 'development'
+end
+
 require File.dirname(__FILE__) + '/../config/boot'
 require File.dirname(__FILE__) + '/../config/environment'
 require 'open-uri'
