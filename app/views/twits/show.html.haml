@@ -1,2 +1,6 @@
+- content_for :js do
+  = javascript_tag do
+    == AUTH_TOKEN = "#{form_authenticity_token}";
+  = javascript_include_tag "show"
 %ul.twit
   = render :partial => 'twit', :object => @twit

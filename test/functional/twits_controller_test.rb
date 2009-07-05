@@ -65,4 +65,15 @@ class TwitsControllerTest < ActionController::TestCase
       assert_equal -1, @twit.rating
     end
   end
+
+  context "getting a random tweet" do
+    setup do
+      @twit = Factory(:twit)
+      get :random
+    end
+
+    should_assign_to :twit
+    should_respond_with :success
+    should_render_template :show
+  end
 end
