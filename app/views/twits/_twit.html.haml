@@ -2,7 +2,7 @@
   %img{:src => twit.avatar_url, :height => 48, :width => 48}
   %p
     %a{ :href => "http://twitter.com/#{twit.username}"}= twit.username
-    = twit.text
+    %span.content= twit.text
     %span.date{:title => twit.twit_created_at}= twit.twit_created_at
   .rating
     Rating

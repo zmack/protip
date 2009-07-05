@@ -15,6 +15,7 @@
   function insertNewTweet(e) {
     $('ul.twit').html(e);
     $('span.date').prettyDate();
+    $('ul.twit li p .content').simpleLinks();
   }
 
   function getNextTweet() {
@@ -42,5 +43,3 @@
   }
 
 })();
-
-
