@@ -28,6 +28,18 @@ h1 {
 
 #content {
   padding-bottom: 1em; }
+  #content .more {
+    width: 780px;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+    background-color: #a1c;
+    -moz-border-radius: .8em;
+    -webkit-border-radius: .8em; }
+    #content .more:hover {
+      background-color: #71c; }
+    #content .more a {
+      display: block; }
   #content ul.twits, #content ul.twit {
     width: 800px;
     margin: 0 auto; }

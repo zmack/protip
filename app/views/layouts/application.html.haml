@@ -14,10 +14,12 @@
     %h1
       %a{ :href => '/' }Protipse !
     %ul#menu
-      %li Wtf
-      %li Wtf
-      %li Wtf
-      %li Wtf
+      %li
+        %a{:href => '/'}Latest
+      %li
+        %a{:href => top_rated_path}Top Rated
+      %li
+        %a{:href => top_voted_path}Top Voted
     #content
       = yield :layout
 
@@ -27,10 +29,11 @@
         %a{ :href => 'http://andascarygoat.com' }zmack
       = yield :footer
     = javascript_include_tag "jquery-1.3.2", "pretty", "simple_links", "scripts"
-    = javascript_tag do
-      == var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-      == document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    = javascript_tag do
-      == try { var pageTracker = _gat._getTracker("UA-9690706-1"); pageTracker._trackPageview(); } catch(err) {}
+    - if RAILS_ENV == 'production'
+      = javascript_tag do
+        == var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        == document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      = javascript_tag do
+        == try { var pageTracker = _gat._getTracker("UA-9690706-1"); pageTracker._trackPageview(); } catch(err) {}
 
     = yield :js

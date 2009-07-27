@@ -12,8 +12,11 @@
   if ( typeof jQuery != "undefined" ) {
     jQuery.fn.simpleLinks = function(){
       return this.each(function(){
-        var links = simpleLinks(this.innerHTML);
-        jQuery(this).html(links);
+        if ( this.linkified === undefined ) {
+          var links = simpleLinks(this.innerHTML);
+          jQuery(this).html(links);
+          this.linkified = true;
+        }
       });
     }
   }

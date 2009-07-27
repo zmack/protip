@@ -2,19 +2,38 @@ $(function() {
   $('span.date').prettyDate();
   $('ul.twit li p .content, ul.twits li p .content').simpleLinks();
 
-  $('.actions .vote_up').click(function() {
-    var addr = $(this).attr('href');
-    var self = this;
-    $.post(addr, '_method=put&authenticity_token=' + encodeURIComponent(AUTH_TOKEN), function() { updateRating(self, 1) }, 'json');
+  $('body').click(function(e) {
+    var target = $(e.target);
+
+    if ( !target.hasClass('vote_up') && !target.hasClass('vote_down') ) {
+      return;
+    }
+    
+    var addr = target.attr('href');
+    
+    if ( target.hasClass('vote_up') ) {
+      var delta = 1;
+    } else {
+      var delta = -1;
+    }
+    $.post(addr, '_method=put&authenticity_token=' + encodeURIComponent(AUTH_TOKEN), function() { updateRating(target, delta) }, 'json');
     return false;
   });
 
-  $('.actions .vote_down').click(function() {
-    var addr = $(this).attr('href');
-    var self = this;
-    $.post(addr, '_method=put&authenticity_token=' + encodeURIComponent(AUTH_TOKEN), function() { updateRating(self, -1) }, 'json');
+  $('.more').click( function() {
+    getMoreTweets();
     return false;
   });
+
+  function addNewTweets(e) {
+    $('ul.twits').append(e);
+    $('span.date').prettyDate();
+    $('ul.twit li p .content, ul.twits li p .content').simpleLinks();
+  }
+
+  function getMoreTweets() {
+    $.get('', "offset=" + $('ul.twits li').length, addNewTweets, 'text');
+  }
 
   function updateRating(element, delta) {
     var container = $(element).parents('li');

@@ -1,8 +1,19 @@
 class TwitsController < ApplicationController
-  before_filter :get_twit, :except => [:index, :random, :recent]
+  before_filter :get_twit, :only => [:show, :voteup, :votedown]
 
   def index
-    @twits = Twit.all( :order => "twitid desc", :limit => "15" )
+    @twits = Twit.all( :order => "twitid desc", :limit => "15", :offset => params[:offset] )
+    respond_to_twits
+  end
+
+  def top_voted
+    @twits = Twit.all( :order => "votes desc", :limit => "15", :offset => params[:offset] )
+    respond_to_twits
+  end
+
+  def top_rated
+    @twits = Twit.all( :order => "rating desc", :limit => "15", :offset => params[:offset] )
+    respond_to_twits
   end
 
   def show
@@ -47,6 +58,17 @@ class TwitsController < ApplicationController
   end
 
 private
+  def respond_to_twits
+    respond_to do |format|
+      format.html do
+        render :action => :index
+      end
+      format.text do
+        render :partial => 'twit.html.haml', :collection => @twits
+      end
+    end
+  end
+
   def get_twit
     @twit = Twit.find(params[:id])
   end

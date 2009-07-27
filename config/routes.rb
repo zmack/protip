@@ -40,6 +40,8 @@ ActionController::Routing::Routes.draw do |map|
   # consider removing the them or commenting them out if you're using named routes and resources.
   map.random '/random', :controller => 'twits', :action => 'random'
   map.resources :twits, :member => {:voteup => :put, :votedown => :put}
+  map.top_rated '/top_rated', :controller => 'twits', :action => 'top_rated'
+  map.top_voted '/top_voted', :controller => 'twits', :action => 'top_voted'
   map.root :controller => 'twits', :action => "index"
 
   #map.connect ':controller/:action/:id'
