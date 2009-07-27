@@ -1,11 +1,14 @@
 html, body {
-  background-color: #C1B;
-  color: #0F0;
+  background-color: #E48FFF;
+  color: #BE5ACF;
   font-family: Verdana; }
 
 a {
-  color: #cc2;
+  color: #7FEAFF;
   text-decoration: none; }
+
+a:hover {
+  color: #00D4FF; }
 
 h1 {
   position: absolute;
@@ -22,9 +25,6 @@ h1 {
     display: inline;
     list-style: none;
     line-height: 4em; }
-
-a:hover {
-  color: #ccc; }
 
 #content {
   padding-bottom: 1em; }
@@ -45,11 +45,12 @@ a:hover {
         margin-right: .15em; }
       #content ul.twits li img,       #content ul.twit li img {
         position: absolute;
-        border: 1px solid pink; }
+        border: 1px solid pink;
+        overflow: hidden; }
       #content ul.twits li p, #content ul.twits li div.rating, #content ul.twits li .actions,       #content ul.twit li p, #content ul.twit li div.rating, #content ul.twit li .actions {
         margin-left: 55px; }
       #content ul.twits li p,       #content ul.twit li p {
-        color: #3FA; }
+        color: #BFFFFE; }
       #content ul.twits li span.date,       #content ul.twit li span.date {
         color: #AAA; }
 
