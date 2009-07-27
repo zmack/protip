@@ -40,6 +40,10 @@ h1 {
       background-color: #71c; }
     #content .more a {
       display: block; }
+    #content .more.loading {
+      background-image: url(/images/loading.gif);
+      background-repeat: no-repeat;
+      background-position: 70% center; }
   #content ul.twits, #content ul.twit {
     width: 800px;
     margin: 0 auto; }

@@ -21,6 +21,7 @@ $(function() {
   });
 
   $('.more').click( function() {
+    $(this).addClass('loading');
     getMoreTweets();
     return false;
   });
@@ -29,6 +30,7 @@ $(function() {
     $('ul.twits').append(e);
     $('span.date').prettyDate();
     $('ul.twit li p .content, ul.twits li p .content').simpleLinks();
+    $('.more.loading').removeClass('loading');
   }
 
   function getMoreTweets() {
