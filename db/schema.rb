@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090622150221) do
+ActiveRecord::Schema.define(:version => 20090728045013) do
 
   create_table "twits", :force => true do |t|
     t.string   "text"
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(:version => 20090622150221) do
     t.integer  "twitid"
     t.integer  "rating"
     t.integer  "votes"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "login"
+    t.string   "token"
+    t.string   "secret"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

@@ -44,6 +44,8 @@ ActionController::Routing::Routes.draw do |map|
   map.top_voted '/top_voted', :controller => 'twits', :action => 'top_voted'
   map.root :controller => 'twits', :action => "index"
 
+  map.resources :users, :collection => { :callback => :get }
+
   #map.connect ':controller/:action/:id'
   #map.connect ':controller/:action/:id.:format'
 end
