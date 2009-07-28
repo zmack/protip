@@ -44,6 +44,6 @@ class UsersController < ApplicationController
 private
   def consumer
     # The readkey and readsecret below are the values you get during registration
-    OAuth::Consumer.new("VHcx8uzQU2qQ5rKl3GvAw", "dY9V84hm59IjLTd7aiQoKZacGxgth65vDRub5MN7I", { :site=>"http://twitter.com" })
+    OAuth::Consumer.new("2VHcx8uzQU2qQ5rKl3GvAw", "dY9V84hm59IjLTd7aiQoKZacGxgth65vDRub5MN7I", { :site=>"http://twitter.com" })
   end
 end
