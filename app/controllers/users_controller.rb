@@ -28,7 +28,7 @@ class UsersController < ApplicationController
         return
       end
       # We have an authorized user, save the information to the database.
-      @user = User.new({ :screen_name => user_info['screen_name'], :token => @access_token.token, :secret => @access_token.secret })
+      @user = User.new({ :login => user_info['screen_name'], :token => @access_token.token, :secret => @access_token.secret })
       @user.save!
       # Redirect to the show page
       redirect_to(@user)
