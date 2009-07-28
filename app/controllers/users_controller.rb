@@ -11,9 +11,8 @@ class UsersController < ApplicationController
   end
 
   def callback
-    @request_token = OAuth::RequestToken.new(UsersController.consumer,
-    session[:request_token],
-    session[:request_token_secret])
+    @request_token = OAuth::RequestToken.new(consumer, session[:request_token], session[:request_token_secret])
+
     # Exchange the request token for an access token.
     @access_token = @request_token.get_access_token(:oauth_verifier => params[:oauth_verifier])
 
@@ -21,7 +20,7 @@ class UsersController < ApplicationController
 
     case @oauth_response
     when Net::HTTPSuccess
-      user_info = JSON.parse(@oauth_response.body)
+      user_info = YAJL::Parser.parse(@oauth_response.body)
       unless user_info['screen_name']
         flash[:notice] = "Authentication failed"
         redirect_to :action => :index
