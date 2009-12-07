@@ -1,5 +1,5 @@
 %li
-  %img{:src => twit.avatar_url, :alt => "#{twit.username}'s avatar", :height => 48, :width => 48}
+  %img{:src => "http://twivatar.com/#{twit.username}", :alt => "#{twit.username}'s avatar", :height => 48, :width => 48}
   %p
     %a{ :href => "http://twitter.com/#{twit.username}"}= twit.username
     %span.content= twit.text
